@@ -3,10 +3,7 @@
 /**************************
  * @file: webpack配置
  * @author: leinov
- * @date: 2018-10-08
- * @update: 2018-11-04 优化html文件
- * 1.修改htmlConfig.js
- * 2.在页面文件夹下添加pageinfo.json
+ * @date: 2018-01-08
  ***************************/
 
 const path = require("path");
@@ -32,7 +29,7 @@ module.exports = (env, argv) => ({
 						presets: [
 							"@babel/preset-env",
 							"@babel/preset-react",
-							{ "plugins": ["@babel/plugin-proposal-class-properties"] } //这句很重要 不然箭头函数出错
+							{ "plugins": ["@babel/plugin-proposal-class-properties"] } 
 						],
 					}
 				},
@@ -82,6 +79,7 @@ module.exports = (env, argv) => ({
 	plugins: [
 
 		new HtmlWebpackPlugin({ //分离css插件
+			title:"hahahah",
 			template: "./src/template.html",
 		})
 	],
