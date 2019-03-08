@@ -56,7 +56,7 @@ class App extends React.PureComponent  {
 		}else{
 			this.setState({ value: value });
 		}
-		
+
 	}
 	// 获取数据
 	getData() {
@@ -114,7 +114,6 @@ class App extends React.PureComponent  {
 	render() {
 		return (
 			<div>
-				
 				<MovieAdd
 					placeholder="请输入电影名称"
 					vauleChange={this.vauleChange}
