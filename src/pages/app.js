@@ -20,7 +20,7 @@ import {
 	movieData
 } from "store/action/movieAction";
 
-class App extends React.Component {
+class App extends React.PureComponent  {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -33,7 +33,13 @@ class App extends React.Component {
 	componentDidMount() {
 		this.getData();
 	}
-
+	// 检查是否重新render
+	/*shouldComponentUpdate(nextProps,nextState){
+		if(something){
+			return true;
+		}
+		return false;
+	}*/
 	// 显示弹窗
 	showModal = (item) => {
 		this.setState({ modalShow: true, id: item.id, text:item.title});

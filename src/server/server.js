@@ -11,16 +11,17 @@ var moment = require("moment");
 var app = express();
 var file = require("./file.js");
 var filePath = __dirname + '/data.json';
-const crypto = require("crypto");
-
-function sign(password,type){
+var crypto = require("crypto");
+moment.locale('zh-cn');
+app.use(bodyParser.json());
+// 生成id
+function sign(id,type){
 	const hash = crypto.createHash(type);
-	hash.update(password);
+	hash.update(id);
 	const rsign = hash.digest("hex"); // hex 16进制 32位
 	return rsign;
 }
 
-app.use(bodyParser.json());
 // 获取数据
 app.get('/api/getdata', function (req, res) {
     file.readFile(filePath).then((data) => {
@@ -34,7 +35,7 @@ app.post('/api/add', function (req, res) {
     file.readFile(filePath).then((data) => {
         var data = JSON.parse(data.toString());
         postData.id = sign(moment().format('MMMM Do YYYY, h:mm:ss a'),"md5")
-        postData.time = moment().format('MMMM Do YYYY, h:mm:ss a');
+        postData.time = moment().format('LLL');
         data.push(postData);
         file.writeFile(filePath, postData, data, res)
     })
