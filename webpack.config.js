@@ -79,7 +79,7 @@ module.exports = (env, argv) => ({
 	plugins: [
 
 		new HtmlWebpackPlugin({ //分离css插件
-			title:"hahahah",
+			title:"react-full-stack",
 			template: "./src/template.html",
 		})
 	],
