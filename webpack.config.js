@@ -81,7 +81,8 @@ module.exports = (env, argv) => ({
 		new HtmlWebpackPlugin({ //分离css插件
 			title:"react-full-stack",
 			template: "./src/template.html",
-		})
+		}),
+		new MiniCssExtractPlugin()
 	],
 	optimization: {
 	}
