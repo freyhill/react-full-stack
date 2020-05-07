@@ -5,7 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
+yarn.lock
+dist/
+build/
 
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)

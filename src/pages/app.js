@@ -88,7 +88,7 @@ class App extends React.PureComponent  {
 		}
 		var req = {
 			method: "put",
-			url: "api/alter",
+			url: "/api/alter",
 			data: {
 				id: this.state.id,
 				title: this.state.alterName
@@ -100,7 +100,7 @@ class App extends React.PureComponent  {
 	deleteMovie = (id) => {
 		var req = {
 			method: "delete",
-			url: "api/delete",
+			url: "/api/delete",
 			data: {
 				id: id
 			}

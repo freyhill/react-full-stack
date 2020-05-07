@@ -7,9 +7,10 @@
     "dev": "webpack-dev-server  --mode development --devtool inline-source-map --hot",
     "server": "node ./src/server/server.js",
     "build": "webpack --mode production",
-    "stopServer":"pm2 stop ./src/server/server.js",
+    "stopServer":"pm2 kill ",
     "startServer":"pm2 start ./src/server/server.js",
-    "start": "npm run stopServer && npm run startServer  && npm run dev"
+    "start": "npm run stopServer && npm run startServer  && npm run dev",
+    "pro": "npm run stopServer && npm run startServer  && pm2 start ./bin/www.js"
   },
   "author": "leinov",
   "license": "MIT",
