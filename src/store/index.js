@@ -2,26 +2,13 @@
 /********************
  * @file:redux main js
  * @author: leinov
- * @date: 2019-03-03
+ * @date: 2020-05
  ********************/
 
-import { createStore ,applyMiddleware, compose} from "redux";
-import reducers from "./reducer/index";
-import thunk from 'redux-thunk';
-console.log(process.env.NODE_ENV);
-export default function configStore() {
+import {createStore} from 'redux';
+import {reducers} from './reducer';
 
-const store = createStore(
-    reducers,
-    compose(
-      applyMiddleware(thunk),
-      (process.env.NODE_ENV === 'development') &&
-        typeof window === 'object' &&
-        typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f // add support for Redux dev tools
-    )
-  );
-	return store;
-}
+export default createStore(reducers);
 
 
   
