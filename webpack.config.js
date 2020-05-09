@@ -13,7 +13,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); /
 const HtmlWebpackPlugin = require("html-webpack-plugin");//生成html文件
 //主配置
 module.exports = (env, argv) => ({
-	entry: './src/pages/index.js',
+	entry: './src/index.js',
 	output: {
 		path: path.join(__dirname, "build"),
 		filename: "bundle.js"

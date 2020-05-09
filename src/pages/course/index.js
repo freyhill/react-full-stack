@@ -8,7 +8,7 @@ import React from 'react';
 import store from '../../store'
 import Input from '../../components/Input'
 import utils from '../../utils/utils'
-
+import {content, connect} from 'react-redux'
 class Course extends React.Component{
   constructor(props) {
     super(props);
@@ -32,7 +32,7 @@ class Course extends React.Component{
   }
   // 提交
   onSubmit = () => {
-    store.dispatch({
+    this.props.dispatch({
       type: 'course',
       data: {
         id: + new Date(),
@@ -43,7 +43,7 @@ class Course extends React.Component{
   }
   // 渲染课程
   coursesRender() {
-    return this.state.course.map(item => {
+    return this.props.courseReducer.course.map(item => {
          return (
          <div key={item.id}>{item.title}  {item.date}</div>
          )
@@ -65,4 +65,9 @@ class Course extends React.Component{
     )
   }
 }
-export default Course;
+const toProps = (state) => {
+  return {
+    courseReducer: state.courseReducer
+  }
+}
+export default connect(toProps)(Course);

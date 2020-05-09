@@ -7,6 +7,8 @@
 import React from 'react';
 import store from '../../store'
 import Input from '../../components/Input'
+import {connect} from 'react-redux'
+
 class Student extends React.Component{
   constructor(props) {
     super(props);
@@ -17,11 +19,6 @@ class Student extends React.Component{
   }
   // store监听
   componentDidMount() {
-    store.subscribe(() => {
-      this.setState({
-          student: store.getState().student
-      })
-    })
   }
   
   // 输入
@@ -30,17 +27,18 @@ class Student extends React.Component{
   }
   // 提交
   onSubmit = () => {
-    store.dispatch({
+    this.props.dispatch({
       type: 'student',
       data: {
         id: + new Date(),
         title: this.state.inputStudent
       }
-    })
+    });
+    console.log('props', this.props);
   }
   // 渲染学生
   studentsRender() {
-    return this.state.student.map(item => {
+    return this.props.student.student.map(item => {
          return (
            <div key={item.id}>{item.title}</div>
          )
@@ -48,7 +46,7 @@ class Student extends React.Component{
   }
 
   render() {
-    console.log(store.getState());
+    console.log(this.props);
     return (
       <>
         <h2>学生</h2>
@@ -62,4 +60,10 @@ class Student extends React.Component{
     )
   }
 }
-export default Student;
+const storeToprops = (state)=>{
+  console.log('state', state);
+  return {
+    student: state.studentReducer
+  }
+}
+export default connect(storeToprops)(Student);
