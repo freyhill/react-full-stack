@@ -1,5 +1,5 @@
 /********************
- * @file:reducer
+ * @file:course reducer
  * @author: leinov
  * @date: 2020-05
  ********************/
