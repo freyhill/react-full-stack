@@ -8,6 +8,7 @@ import React from 'react';
 import store from '../../store'
 import Input from '../../components/Input'
 import {connect} from 'react-redux'
+import {request, studentAction} from "../actions/commonAction";
 
 class Student extends React.Component{
   constructor(props) {
@@ -26,14 +27,18 @@ class Student extends React.Component{
     this.setState({[e.target.name]:  e.target.value});
   }
   // 提交
+  getData = () => {
+    return request('getData', 
+      {id: 1}, 
+      studentAction, 
+      (res) => {
+        console.log('res', res);
+      })
+  }
   onSubmit = () => {
-    this.props.dispatch({
-      type: 'student',
-      data: {
-        id: + new Date(),
-        title: this.state.inputStudent
-      }
-    });
+     
+    this.props.dispatch(this.getData());
+    
     console.log('props', this.props);
   }
   // 渲染学生

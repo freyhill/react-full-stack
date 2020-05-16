@@ -5,10 +5,10 @@
  * @date: 2020-05
  ********************/
 
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import reducers from './reducer/index';
-
-export default createStore(reducers);
+import thunk from 'redux-thunk'
+export default createStore(reducers, applyMiddleware(thunk));
 
 
   
