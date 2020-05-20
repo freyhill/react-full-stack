@@ -1,19 +1,18 @@
 /********************
  * @file:movie main
  * @author: leinov
- * @date: 2019-03-03
+ * @date: 2020-05
  ********************/
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import configStore from "store/index.js";
-import App from "./app.js";
+import App from "./pages/app.js";
 import "./index.scss";
-
-const store = configStore();
+import store from './store/index';
+import {Provider} from 'react-redux';
 ReactDOM.render(
-	<Provider store={store}>   
+	<Provider store={store}>
 		<App />
-	</Provider>, 
+	</Provider>,
 	document.getElementById("root"));
+		

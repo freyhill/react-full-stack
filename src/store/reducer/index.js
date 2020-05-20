@@ -1,11 +1,13 @@
 /********************
- * @file:reducer main js
+ * @file:combineReducers
  * @author: leinov
- * @date: 2019-03-03
+ * @date: 2020-05
  ********************/
-import {combineReducers} from "redux";
-import movieList from "./movieReducer";
-const reducers = combineReducers({
-	movieList
-});
-export default reducers;
+import {combineReducers} from 'redux';
+import {studentReducer} from './studentReducer';
+import {courseReducer} from './courseReducer'
+
+export default combineReducers({
+    studentReducer,
+    courseReducer
+})
