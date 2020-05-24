@@ -1,34 +1,47 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getUserInfoAction, setUserInfoAction} from '../../actions/userInfoAction';
-
+import {
+    getUserInfoAction, 
+    setUserInfoAction,
+    updateUserInfoAction,
+    setUpdateUserInfoAction
+} from '../../actions/userInfoAction';
+import {post} from '../../api/index';
+import Title from '../../components/title';
 class UserInfo extends React.Component {
     constructor(props) {
         super(props);
     }
     componentDidMount() {
-        this.props.dispatch(getUserInfoAction('/data/wepylist.json',{},setUserInfoAction))
+        this.props.dispatch(getUserInfoAction('/userInfo',{},setUserInfoAction))
        
     }
-    renderUserList = () => {
-        const {baseInfo: {data = []}} = this.props;
-        return data.map(item => {
+    updateUser = () => {
+        const data = {name: 'leinov2'}
+        this.props.dispatch(updateUserInfoAction('/userInfo', data, setUserInfoAction))
+    }
+    renderUserInfo = () => {
+        const {userInfo} = this.props;
+        return Object.keys(userInfo).map((user) => {
             return (
-            <div key={item.id}>{item.name}</div>
+                <div key={user}>{user}: {userInfo[user]}</div>
             )
         })
     }
+
     render () {
         return (
             <>
-               {this.renderUserList()}
+                <Title name="用户信息" />
+               {this.renderUserInfo()}
+               <div onClick={this.updateUser}>修改用户</div>
             </>
         )
     }
 }
 const stateToProps = (state) => {
     return {
-        baseInfo: state.userInfoReducer.baseInfo
+        userInfo: state.userInfoReducer.baseInfo
     }
 }
 export default connect(stateToProps)(UserInfo);

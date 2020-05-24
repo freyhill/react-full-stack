@@ -1,1 +1,3 @@
 export const BASE_USER_INFO = 'BASE_USER_INFO';
+
+export const STUDENT_LIST_DATA = 'STUDENT_LIST_DATA';

@@ -1,5 +1,6 @@
 import React from 'react';
 import UserInfo from './userInfo/index';
+import Student from './student/index'
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -11,6 +12,7 @@ class App extends React.Component{
     return (
       <div>
         <UserInfo/>
+        <Student />
       </div>
     )
   }
