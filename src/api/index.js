@@ -1,6 +1,6 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:3000'
-axios.defaults.baseURL = BASE_URL;
+import {config} from '../config'
+axios.defaults.baseURL = config.BASE_URL;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 // 请求拦截

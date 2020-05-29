@@ -1,6 +1,30 @@
-.student-item{
-    margin-bottom: 10px;;
-    .student-name{
-        width: 50px;
+.table{
+    width: 500px;
+}
+.head{
+    > div{
+        flex: 1;
+        padding: 10px;
+    }
+    .head-title{
+        font-weight: bold;
+        background: #e4e4e4;
+    }
+}
+.list{
+    .line{
+        padding:10px;
+        font-size: 16px;
+        color: #333;
+        >div{
+            flex: 1;
+            padding: 10px
+        }
+        &:nth-child(odd){
+            background: #f8f8f8;
+        }
+        &:nth-child(even){
+            background: #fff;
+        }
     }
 }

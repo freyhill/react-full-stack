@@ -7,12 +7,40 @@ import {
 import './index.scss';
 import {put, del, post} from '../../api/index';
 import Title from '../../components/title';
+import EasyTable from './easy-talbe'
 class Student extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            tableHead: []
+        }
     }
     componentDidMount() {
         this.getStudentList();
+        setTimeout(() => {
+            this.setState({tableHead: [
+                {
+                    key: 'name',
+                    label: '姓名'
+                },
+                {
+                    key: 'age',
+                    label: '年龄'
+                },
+                {
+                    key: 'gender',
+                    label: '性别'
+                },
+                {
+                    key: 'name',
+                    label: '姓名'
+                },
+                {
+                    key: 'grade',
+                    label: '班级'
+                },
+            ]})
+        }, 1000)
     }
     // 获取学生列表
     getStudentList =()=> {
@@ -40,29 +68,17 @@ class Student extends React.Component {
             this.getStudentList();
         })
     }
-    renderStudentList =() => {
-        const {studentList: st} = this.props;
-        return st.map(item => {
-            return (
-                <div key={item.id} className="flex student-item">
-                    <div className="student-name">{item.name}</div>
-                    <div>
-                        <button onClick={this.updateStudent.bind(this, item.id)}>修改</button>
-                        <button onClick={this.deleteStudent.bind(this, item.id)}>删除</button>
-                    </div>
-                </div>
-            )
-        })
-    }
+   
     render () {
         console.log(this.props.studentList);
         return (
             <>
               <Title name="学生列表"></Title>
-                    <button onClick={this.addStudent}>
-                        新增学生
-                    </button>
-              <div>{this.renderStudentList()}</div>
+              <EasyTable
+                data={this.props.studentList}
+                head={this.state.tableHead}
+                algin="center"
+              />
             </>
         )
     }

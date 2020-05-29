@@ -4,12 +4,28 @@
   },
   "student": [
     {
-      "name": "leinov2",
-      "id": 21
+      "id": 1,
+      "name": "leinov",
+      "gender": 1,
+      "grade": 8,
+      "age": 18,
+      "course": "英语暑期vip班"
     },
     {
-      "name": "leinov2",
-      "id": 22
+      "id": 2,
+      "name": "leinov",
+      "gender": 1,
+      "grade": 8,
+      "age": 18,
+      "course": "英语暑期vip班"
+    },
+    {
+      "id": 3,
+      "name": "leinov",
+      "gender": 1,
+      "grade": 8,
+      "age": 18,
+      "course": "英语暑期vip班"
     }
   ]
 }

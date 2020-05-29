@@ -1,11 +1,15 @@
 const env = process.env.NODE_ENV;
-let config = {}
+let config = {
+    BASE_URL: ''
+}
 if (env === 'development') {
-    config.host = '';
+    config.BASE_URL = 'http://localhost:3000';
 } else if (env === 'production') {
-    config.host = 'http://localhost:9003';
+    config.BASE_URL = 'http://localhost:9003';
 }else {
-    config.host = ''
+    config.BASE_URL = ''
 }
 
-export default config;
+export {
+    config
+};

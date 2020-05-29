@@ -4,7 +4,7 @@
   "description": " react-full-stack",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server  --mode development --devtool inline-source-map --hot",
+    "dev": "json-server --watch ./src/api/mock/data.json --port 3000 & webpack-dev-server  --mode development --devtool inline-source-map --hot",
     "build": "webpack --mode production",
     "start": "npm run dev",
     "pro": "pm2 kill && pm2 start ./bin/www.js"
