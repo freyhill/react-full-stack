@@ -78,9 +78,9 @@ module.exports = (env, argv) => ({
 	},
 	plugins: [
 
-		new HtmlWebpackPlugin({ //分离css插件
+		new HtmlWebpackPlugin({ 
 			title:"react-full-stack",
-			template: "./src/template.html",
+			template: "./public/index.html",
 		}),
 		new MiniCssExtractPlugin()
 	],
