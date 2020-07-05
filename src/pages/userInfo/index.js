@@ -5,7 +5,7 @@ import {
     setUserInfoAction,
     updateUserInfoAction,
     setUpdateUserInfoAction
-} from '../../actions/userInfoAction';
+} from '../../store/actions/userInfoAction';
 import {post} from '../../api/index';
 import Title from '../../components/title';
 class UserInfo extends React.Component {

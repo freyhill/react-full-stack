@@ -1,4 +1,4 @@
-import {get, post, put, del} from '../api/index';
+import {get, post, put, del} from '../../api/index';
 import {STUDENT_LIST_DATA} from './actionTypes';
 
 export function setStudentListAction (newData) {

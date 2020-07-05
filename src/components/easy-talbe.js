@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.scss'
+import '../index.scss'
 
 class EasyTable extends React.PureComponent {
     constructor(props) {

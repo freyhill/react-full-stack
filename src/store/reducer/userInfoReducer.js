@@ -1,5 +1,5 @@
 
-import {BASE_USER_INFO} from '../../actions/actionTypes';
+import {BASE_USER_INFO} from '../actions/actionTypes';
 const initState = {
     baseInfo: {
         name: 'leinov'

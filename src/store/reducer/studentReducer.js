@@ -1,5 +1,5 @@
 
-import {STUDENT_LIST_DATA} from '../../actions/actionTypes';
+import {STUDENT_LIST_DATA} from '../actions/actionTypes';
 const initState = {
     studentList : []
 }

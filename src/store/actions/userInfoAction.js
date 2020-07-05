@@ -1,4 +1,4 @@
-import {get, put} from '../api/index';
+import {get, put} from '../../api/index';
 import {BASE_USER_INFO} from './actionTypes';
 
 export function setUserInfoAction (newData) {

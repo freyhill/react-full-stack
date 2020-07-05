@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 import {
     getStudentListAction,
     setStudentListAction
-} from '../../actions/studentAction';
+} from '../../store/actions/studentAction';
 import './index.scss';
 import {put, del, post} from '../../api/index';
 import Title from '../../components/title';
-import EasyTable from './easy-talbe'
+import EasyTable from '../../components/easy-talbe'
 class Student extends React.Component {
     constructor(props) {
         super(props);
